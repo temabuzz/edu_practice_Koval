@@ -156,7 +156,7 @@ fi
 
 <img width="538" height="76" alt="изображение" src="https://github.com/user-attachments/assets/81fc0653-3ef4-47da-9105-1610004a8311" />
 
-*Рис.8 Вывод user_f2.sh*
+*Рис.9 Вывод user_f2.sh*
 
 # 10. finder_light.sh
 Код:
