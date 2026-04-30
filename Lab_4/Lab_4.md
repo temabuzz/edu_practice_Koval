@@ -250,12 +250,15 @@ done
 ```
 #!/bin/bash
 
-dir=${1:-.}
-find "$dir" -maxdepth 1 -type f -exec stat -c "%x %n" {} + | sort | head -n 3
+dir="${1:-.}"
+find "$dir" -type f -printf '%T@ %p\n' 2>/dev/null | sort -n | head -3 | while read timestamp path; do
+    date=$(date -d "@$timestamp" "+%Y-%m-%d %H:%M:%S")
+    echo "$path — $date"
+done
 ```
 Делаем файл исполняемым и запускаем:
 
-<img width="590" height="95" alt="изображение" src="https://github.com/user-attachments/assets/ced38e3f-3032-45ed-bfcb-93aebb374e9d" />
+<img width="346" height="78" alt="изображение" src="https://github.com/user-attachments/assets/cd6b4f72-76bd-47c0-a359-a9352d86129d" />
 
 *Рис.15 Вывод sort_du.sh*
 
