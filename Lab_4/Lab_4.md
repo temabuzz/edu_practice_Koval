@@ -1,7 +1,7 @@
 # Лабораторная работы №2. Базовая настройка IP-телефонов в среде Cisco
 ## Шаг 1 - Создание топология
 
-
+<img width="640" height="462" alt="изображение" src="https://github.com/user-attachments/assets/73710e1c-fcf4-4aa5-97ca-a382e8dddf8b" />
 
 *Рис.1 Топология*
 
@@ -53,14 +53,14 @@
 
 ## Шаг 9 - Проверка звонка
 
-
+<img width="1384" height="640" alt="изображение" src="https://github.com/user-attachments/assets/ea3c50d3-d7f0-4879-a689-9b410295d83d" />
 
 *Рис.10 Проверка звонка*
 
 # Лабораторная работа №3. Настройка конфигурации Cisco CallManager Express на маршрутизаторе Cisco 2811
 ## Шаг 1 - Создание топологии
 
-
+<img width="614" height="440" alt="изображение" src="https://github.com/user-attachments/assets/0408c1b1-6687-4b8b-abcd-d696d078d360" />
 
 *Рис.11 Создание топологии*
 
@@ -114,17 +114,18 @@
 
 ## Шаг 10 - Проверка звонка 
 
-
+<img width="1400" height="682" alt="изображение" src="https://github.com/user-attachments/assets/af7c2547-90cb-4f76-96c9-0d4046ca8d1c" />
 
 *Рис.20 Проверка звонка 1*
 
+<img width="1387" height="584" alt="изображение" src="https://github.com/user-attachments/assets/a42bcd22-bb8c-4b7b-8634-ac9c1d946baf" />
 
 *Рис.21 Проверка звонка 2*
 
 # Лабораторная работа №4. Конфигурация VOIP в среде Cisco Packet Tracer
 ## Шаг 1 - создание топологии
 
-
+<img width="740" height="533" alt="изображение" src="https://github.com/user-attachments/assets/8932e8bb-e06d-41f6-8bb4-8be136a9efec" />
 
 *Рис.22 Создание топологии*
 
@@ -176,7 +177,7 @@
 
 *Рис.31 Настройка f0/0.99*
 
-## Шаг 8 - Исключение адресов из DHCP*
+## Шаг 8 - Исключение адресов из DHCP
 
 <img width="470" height="29" alt="изображение" src="https://github.com/user-attachments/assets/9f2b6dee-5486-4c3d-892e-b92d8a603c9e" />
 
@@ -226,16 +227,18 @@
 
 ## Шаг 12 - Проверка на телефонах
 
+<img width="1329" height="502" alt="изображение" src="https://github.com/user-attachments/assets/c44f7adf-f90b-4822-b1e8-dedcc5503360" />
 
 *Рис.42 Проверка с 101 на 102*
 
+<img width="1296" height="572" alt="изображение" src="https://github.com/user-attachments/assets/58f1a48d-1b21-4c9b-a139-dc7bded99c79" />
 
 *Рис.43 Проверка с 101 на 103*
 
 # Лабораторная работа №7. Построение сети IP-телефонии между удаленными маршрутизаторами в среде Cisco Packet Tracer
 ## Шаг 1 - Создание топологии
 
-
+<img width="1091" height="477" alt="изображение" src="https://github.com/user-attachments/assets/6b4ac94d-6a6b-46d4-8e78-a25b95e1c1d6" />
 
 *Рис.44 Создание топологии*
 
@@ -301,7 +304,7 @@
 
 ## Шаг 12 - Проверка звонка внутри одной сети
 
-
+<img width="1341" height="512" alt="изображение" src="https://github.com/user-attachments/assets/6b0a3c0f-883a-4436-b131-db00ef8be40e" />
 
 *Рис.55 Проверка звонка внутри одной сети*
 
@@ -361,7 +364,7 @@
 
 ## Шаг 22 - Проверка звонка внутри второй сети
 
-
+<img width="1372" height="509" alt="изображение" src="https://github.com/user-attachments/assets/90c3a410-e123-42df-922b-910c9a7315d4" />
 
 *Рис.65 Проверка звонка внутри второй сети*
 
@@ -381,7 +384,7 @@ RouterB:
 
 ## Шаг 24 - Проверка звонка между двумя сетями 
 
-
+<img width="1375" height="511" alt="изображение" src="https://github.com/user-attachments/assets/86c1da34-c287-4eab-98c2-05971117ec9e" />
 
 *Рис.68 Проверка звонка между двумя сетями*
 
@@ -391,12 +394,11 @@ RouterB:
 
 *Рис.69 Проверка пинга*
 
-
 # Лабораторная работа №8. Построение сети IP-телефонии между удаленными маршрутизаторами
 
 ## Шаг 1 - Создание топологии
 
-
+<img width="660" height="505" alt="изображение" src="https://github.com/user-attachments/assets/04a4f888-7a53-406c-922d-bb320c8a5699" />
 
 *Рис.70 Создание топологии*
 
@@ -522,12 +524,13 @@ RouterB:
 
 Внутри сети:
 
+<img width="1319" height="517" alt="изображение" src="https://github.com/user-attachments/assets/4b9bed98-85d2-4561-bea6-5e93bb940aa8" />
 
 *Рис.91 Проверка внутри сети*
 
 Между сетями:
 
-
+<img width="1380" height="501" alt="изображение" src="https://github.com/user-attachments/assets/078e78c8-e3f7-49fc-83a4-262a846261a7" />
 
 *Рис.92 Проверка между сетями*
 
