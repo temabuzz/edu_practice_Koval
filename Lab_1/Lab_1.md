@@ -123,17 +123,17 @@ rus-nsk-sw1:
 
 ## Шаг 7 - Создание канала между коммутаторами в Новосибисрке
 
-rus-nsk-sw1:
+rus-nsk-sw0:
 
 <img width="367" height="57" alt="изображение" src="https://github.com/user-attachments/assets/5b987f1a-184f-4fe6-8c83-857ee404b531" />
 
-*Рис. 15 Создание канала на rus-nsk-sw1*
+*Рис. 15 Создание канала на rus-nsk-sw0*
 
-rus-nsk-sw2:
+rus-nsk-sw1:
 
 <img width="355" height="56" alt="изображение" src="https://github.com/user-attachments/assets/a7ecfa7a-ccb3-42a7-a135-61db00501fec" />
 
-*Рис. 16 Создание канала на rus-nsk-sw2*
+*Рис. 16 Создание канала на rus-nsk-sw1*
 
 ## Шаг 8 - Создание Management interface на SW1 для VLAN1
 
