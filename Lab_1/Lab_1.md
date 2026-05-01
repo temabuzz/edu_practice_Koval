@@ -500,13 +500,11 @@ rus-msk-multisw1:
 
 ---
 
-## Шаг 6 - Проверка
+## Шаг 6 - Проверка loopback-интерфейса
 
-```bash
-ping 192.168.103.3 source 192.168.101.1
-```
+<img width="550" height="326" alt="изображение" src="https://github.com/user-attachments/assets/f033f5b5-62e5-48f5-8678-8e333de386b2" />
 
-*Рис.61 Проверка Tunnel*
+*Рис.61 Проверка loopback-интерфейса*
 
 # Часть 8
 
@@ -514,91 +512,51 @@ ping 192.168.103.3 source 192.168.101.1
 
 ### rus-nsk-r1
 
-```bash
-ntp authentication-key 1 md5 cisco
-ntp authenticate
-ntp trusted-key 1
-ntp server 10.0.0.100 key 1
-
-logging 10.0.0.100
-```
+<img width="319" height="70" alt="изображение" src="https://github.com/user-attachments/assets/f108099b-5931-497f-931c-74852bd49b3a" />
 
 *Рис.62 Настройка NTP и Syslog на rus-nsk-r1*
 
-### rus-msk-r1
+### rus-msk-r2
 
-```bash
-ntp authentication-key 1 md5 cisco
-ntp authenticate
-ntp trusted-key 1
-ntp server 10.0.0.100 key 1
-
-logging 10.0.0.100
-```
+<img width="326" height="71" alt="изображение" src="https://github.com/user-attachments/assets/e1d7ace9-522a-415e-bd48-684600dd1aea" />
 
 *Рис.63 Настройка NTP и Syslog на rus-msk-r1*
 
-### rus-msk-r2
+### rus-msk-r3
 
-```bash
-ntp authentication-key 1 md5 cisco
-ntp authenticate
-ntp trusted-key 1
-ntp server 10.0.0.100 key 1
+<img width="320" height="68" alt="изображение" src="https://github.com/user-attachments/assets/51291cca-47a1-42db-a4e7-bdf8c204e2e8" />
 
-logging 10.0.0.100
-```
-
-*Рис.64 Настройка NTP и Syslog на rus-msk-r2*
+*Рис.64 Настройка NTP и Syslog на rus-msk-r3*
 
 ---
 
-## Шаг 2 - SNMP
-
-### rus-msk-r1
-
-```bash
-snmp-server community cisco ro
-snmp-server community cisco rw
-```
-
-*Рис.65 Настройка SNMP на rus-msk-r1*
+## Шаг 2 - Настройка SNMP на R2 и R3
 
 ### rus-msk-r2
 
-```bash
-snmp-server community cisco ro
-snmp-server community cisco rw
-```
+<img width="297" height="32" alt="изображение" src="https://github.com/user-attachments/assets/36e1a1bf-6c5b-4f8e-83b5-3c0c85740796" />
 
-*Рис.66 Настройка SNMP на rus-msk-r2*
+*Рис.65 Настройка SNMP на rus-msk-r2*
 
----
+### rus-msk-r3
 
-## Шаг 3 - AAA и Telnet
+<img width="304" height="28" alt="изображение" src="https://github.com/user-attachments/assets/62c69c2c-d7ae-432c-8392-803dbefca57d" />
 
-### rus-msk-r2
-
-```bash
-aaa new-model
-aaa authentication login default group radius local
-radius-server host 10.0.0.100 key cisco
-
-line vty 0 15
-transport input telnet ssh
-login authentication default
-```
-
-*Рис.67 Настройка AAA и Telnet на rus-msk-r2*
+*Рис.66 Настройка SNMP на rus-msk-r3*
 
 ---
+
+## Шаг 3 - Настройка AAA и Telnet на r3
+
+### rus-msk-r3
+
+<img width="468" height="83" alt="изображение" src="https://github.com/user-attachments/assets/b2b47547-72c4-414d-b241-729f2a22be00" />
+
+*Рис.67 Настройка AAA и Telnet на rus-msk-r3*
 
 ## Шаг 4 - Настройка FTP
-
-```bash
-ip ftp username cisco
-ip ftp password cisco
-```
+rus-msk-r2
+<img width="233" height="27" alt="изображение" src="https://github.com/user-attachments/assets/c2e8eed5-5ba7-4b96-a0a1-a883a0e3e697" />
 
 *Рис.68 Настройка FTP*
 
@@ -606,19 +564,13 @@ ip ftp password cisco
 
 ## Шаг 5 - Отправка конфигурации FTP
 
-```bash
-copy running-config ftp
-```
+<img width="356" height="114" alt="изображение" src="https://github.com/user-attachments/assets/0978ee29-18d3-4e9e-a2d6-e46aa493cab3" />
 
 *Рис.69 Отправка конфигурации FTP*
 
----
-
 ## Шаг 6 - Отправка конфигурации TFTP
 
-```bash
-copy running-config tftp
-```
+<img width="330" height="114" alt="изображение" src="https://github.com/user-attachments/assets/5fe00289-ad11-41fe-997c-3787a2f26822" />
 
 *Рис.70 Отправка конфигурации TFTP*
 
@@ -626,54 +578,36 @@ copy running-config tftp
 
 ## Шаг 7 - Проверка boot system
 
-```bash
-show run | include boot
-```
+<img width="191" height="30" alt="изображение" src="https://github.com/user-attachments/assets/d09acb78-aa6d-4c35-8b85-151dab321319" />
 
 *Рис.71 Проверка boot system*
 
----
+Команда ничего не выдаёт, значит команд boot system нет.
 
 ## Шаг 8 - Проверка Telnet
 
 ### Создание пользователя
-
-```bash
-username standby secret cisco
-enable secret cisco
-```
+rus-msk-r3:
+<img width="286" height="29" alt="изображение" src="https://github.com/user-attachments/assets/5ef6d3d1-9e44-4303-9f73-a13b13a8a600" />
 
 *Рис.72 Создание пользователя*
 
-### Подключение
+rus-msk-r2:
 
-```bash
-telnet 10.0.0.3
-```
+<img width="612" height="152" alt="изображение" src="https://github.com/user-attachments/assets/3c857a40-700f-41fb-85f4-90a5bc8715c2" />
 
 *Рис.73 Подключение по Telnet*
 
----
 
-## Шаг 9 - Изменение локального имени пользователя
+## Шаг 9 - Изменение локального имени пользователя на R3
+Вводим команду для игнорирования конфигурации при загрузке.
 
-```bash
-confreg 0x2142
-reload
-```
+<img width="193" height="17" alt="изображение" src="https://github.com/user-attachments/assets/a67fac0a-3181-42e8-ad2f-f56726396edb" />
 
 *Рис.74 Сброс конфигурации*
 
 После перезагрузки:
 
-```bash
-enable
-copy startup-config running-config
-conf t
-no username standby
-username newadmin secret cisco
-config-register 0x2102
-reload
-```
+<img width="643" height="338" alt="изображение" src="https://github.com/user-attachments/assets/3f2bb438-c87e-41d7-bf8f-8f5ebbe2a4cd" />
 
 *Рис.75 Восстановление конфигурации и создание нового пользователя*
