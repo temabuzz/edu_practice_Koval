@@ -135,31 +135,31 @@ rus-nsk-sw1:
 
 *Рис. 16 Создание канала на rus-nsk-sw1*
 
-## Шаг 8 - Создание Management interface на SW1 для VLAN1
+## Шаг 8 - Создание Management interface на SW0 для VLAN1
 
 <img width="328" height="91" alt="изображение" src="https://github.com/user-attachments/assets/fb68f051-4ab3-408b-b3eb-ec22aa040b3e" />
 
-*Рис. 17 Management interface на SW1 для VLAN1*
+*Рис. 17 Management interface на SW0 для VLAN1*
 
-## Шаг 9 - Management interface на SW2 для VLAN2
+## Шаг 9 - Management interface на SW1 для VLAN2
 
 <img width="337" height="58" alt="изображение" src="https://github.com/user-attachments/assets/66933a5b-5c52-45b1-b4b9-45f9a6035023" />
 
-*Рис. 18 Management interface на SW2 для VLAN2*
+*Рис. 18 Management interface на SW1 для VLAN2*
 
 ## Шаг 10 - Включение SSHv2
 
-rus-nsk-sw1:
+rus-nsk-sw0:
 
 <img width="517" height="212" alt="изображение" src="https://github.com/user-attachments/assets/3f237abd-0cac-4d68-a09c-4e49b749d91c" />
 
-*Рис. 19 Включение SSHv2 на rus-nsk-sw1*
+*Рис. 19 Включение SSHv2 на rus-nsk-sw0*
 
-rus-nsk-sw2:
+rus-nsk-sw1:
 
 <img width="517" height="212" alt="изображение" src="https://github.com/user-attachments/assets/3f147247-d510-4c62-895e-f4507696aba8" />
 
-*Рис. 20 Включение SSHv2 на rus-nsk-sw2*
+*Рис. 20 Включение SSHv2 на rus-nsk-sw1*
 
 ## Шаг 11 - Настройка интерфейса f0/24
 
@@ -169,17 +169,17 @@ rus-nsk-sw2:
 
 ## Шаг 12 - Настройка баннера на SW1 и SW2
 
-SW1:
+SW0:
 
 <img width="300" height="17" alt="изображение" src="https://github.com/user-attachments/assets/84df2877-2594-49fc-aa9e-fb6b536930e0" />
 
-*Рис. 22 Настройка баннера на SW1*
+*Рис. 22 Настройка баннера на SW0*
 
-SW2:
+SW1:
 
 <img width="294" height="14" alt="изображение" src="https://github.com/user-attachments/assets/82804424-c77b-4c6d-b454-e043c73588ff" />
 
-*Рис. 23 Настройка баннера на SW2*
+*Рис. 23 Настройка баннера на SW1*
 
 ## Шаг 13 - Настройка f0/2-4 на SW0 и SW1
 
@@ -608,3 +608,6 @@ rus-msk-r2:
 <img width="643" height="338" alt="изображение" src="https://github.com/user-attachments/assets/3f2bb438-c87e-41d7-bf8f-8f5ebbe2a4cd" />
 
 *Рис. 84 Восстановление конфигурации и создание нового пользователя*
+
+# Полная конфигурация
+
