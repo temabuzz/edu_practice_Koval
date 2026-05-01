@@ -27,6 +27,8 @@ conf t
 banner motd #Работу выполнил Коваль Артем студент группы 321#
 ```
 
+*Рис.4 Создание баннера на R1*
+
 ---
 
 ## Шаг 3 - Переименовывание устройств
@@ -69,6 +71,8 @@ hostname rus-nsk-sw1
 hostname rus-nsk-sw2
 ```
 
+*Рис.5 Настройка hostname на всех устройствах*
+
 ---
 
 ## Шаг 4 - Раздача доменных имён
@@ -79,6 +83,8 @@ hostname rus-nsk-sw2
 conf t
 ip domain-name nsk.local
 ```
+
+*Рис.6 Настройка доменного имени*
 
 ---
 
@@ -93,6 +99,8 @@ vlan 3
 vlan 4
 ```
 
+*Рис.7 Создание VLAN на rus-nsk-sw1*
+
 ### rus-nsk-sw2
 
 ```bash
@@ -101,6 +109,8 @@ vlan 2
 vlan 3
 vlan 4
 ```
+
+*Рис.8 Создание VLAN на rus-nsk-sw2*
 
 ---
 
@@ -122,6 +132,8 @@ switchport mode access
 switchport access vlan 4
 ```
 
+*Рис.9 Назначение VLAN на интерфейсах rus-nsk-sw1*
+
 ### rus-nsk-sw2
 
 ```bash
@@ -138,6 +150,8 @@ switchport mode access
 switchport access vlan 4
 ```
 
+*Рис.10 Назначение VLAN на интерфейсах rus-nsk-sw2*
+
 ---
 
 ## Шаг 7 - Создание канала между коммутаторами в Нск
@@ -152,6 +166,8 @@ interface port-channel1
 switchport mode trunk
 ```
 
+*Рис.11 Создание канала на rus-nsk-sw1*
+
 ### rus-nsk-sw2
 
 ```bash
@@ -161,6 +177,8 @@ channel-group 1 mode passive
 interface port-channel1
 switchport mode trunk
 ```
+
+*Рис.12 Создание канала на rus-nsk-sw2*
 
 ---
 
@@ -174,6 +192,8 @@ no shutdown
 ip default-gateway 1.0.0.1
 ```
 
+*Рис.13 Management interface на SW1 для VLAN1*
+
 ---
 
 ## Шаг 9 - Management interface на SW2 для VLAN2
@@ -185,6 +205,8 @@ no shutdown
 
 ip default-gateway 2.0.0.1
 ```
+
+*Рис.14 Management interface на SW2 для VLAN2*
 
 ---
 
@@ -204,6 +226,8 @@ login local
 transport input ssh
 ```
 
+*Рис.15 Включение SSHv2 на rus-nsk-sw1*
+
 ### rus-nsk-sw2
 
 ```bash
@@ -218,6 +242,8 @@ login local
 transport input ssh
 ```
 
+*Рис.16 Включение SSHv2 на rus-nsk-sw2*
+
 ---
 
 ## Шаг 11 - Настройка интерфейса f0/24
@@ -226,6 +252,8 @@ transport input ssh
 interface f0/24
 switchport mode trunk
 ```
+
+*Рис.17 Настройка интерфейса f0/24*
 
 ---
 
@@ -237,11 +265,15 @@ switchport mode trunk
 banner motd #Это rus-nsk-sw1#
 ```
 
+*Рис.18 Настройка баннера на SW1*
+
 ### SW2
 
 ```bash
 banner motd #Это rus-nsk-sw2#
 ```
+
+*Рис.19 Настройка баннера на SW2*
 
 ---
 
@@ -258,6 +290,8 @@ switchport port-security mac-address sticky
 switchport port-security violation shutdown
 ```
 
+*Рис.20 Настройка f0/2-4*
+
 ---
 
 ## Шаг 14 - Защита консоли
@@ -266,6 +300,8 @@ switchport port-security violation shutdown
 line console 0
 login local
 ```
+
+*Рис.21 Защита консоли*
 
 ---
 
@@ -279,6 +315,8 @@ line vty 0 15
 exec-timeout 0 0
 ```
 
+*Рис.22 Отключение таймаута*
+
 ---
 
 ## Шаг 16 - Отключение прерывания
@@ -291,6 +329,8 @@ line vty 0 15
 logging synchronous
 ```
 
+*Рис.23 Отключение прерывания*
+
 ---
 
 ## Шаг 17 - Изменение размера буфера
@@ -299,6 +339,8 @@ logging synchronous
 line console 0
 history size 256
 ```
+
+*Рис.24 Изменение размера буфера*
 
 # Часть 2
 
@@ -309,6 +351,8 @@ interface f0/1
 ip address 40.40.40.1 255.255.255.0
 no shutdown
 ```
+
+*Рис.25 Назначение IP-адреса для F0/1 на R1*
 
 ---
 
@@ -332,6 +376,8 @@ encapsulation dot1Q 4
 ip address 4.0.0.1 255.0.0.0
 ```
 
+*Рис.26 Настройка маршрутизации между VLAN*
+
 ---
 
 ## Шаг 3 - Настройка DHCP
@@ -343,11 +389,15 @@ ip dhcp excluded-address 3.0.0.1 3.0.0.99
 ip dhcp excluded-address 4.0.0.1 4.0.0.99
 ```
 
+*Рис.27 Исключение адресов DHCP*
+
 ```bash
 ip dhcp pool VLAN1
 network 1.0.0.0 255.0.0.0
 default-router 1.0.0.1
 ```
+
+*Рис.28 Создание DHCP пула для VLAN1*
 
 ```bash
 ip dhcp pool VLAN2
@@ -355,17 +405,23 @@ network 2.0.0.0 255.0.0.0
 default-router 2.0.0.1
 ```
 
+*Рис.29 Создание DHCP пула для VLAN2*
+
 ```bash
 ip dhcp pool VLAN3
 network 3.0.0.0 255.0.0.0
 default-router 3.0.0.1
 ```
 
+*Рис.30 Создание DHCP пула для VLAN3*
+
 ```bash
 ip dhcp pool VLAN4
 network 4.0.0.0 255.0.0.0
 default-router 4.0.0.1
 ```
+
+*Рис.31 Создание DHCP пула для VLAN4*
 
 ---
 
@@ -374,6 +430,8 @@ default-router 4.0.0.1
 ```bash
 ping 3.0.0.101
 ```
+
+*Рис.32 Проверка ping*
 
 # Часть 3
 
@@ -384,6 +442,8 @@ conf t
 hostname rus-msk-multisw1
 ```
 
+*Рис.33 Настройка имени хоста MLS*
+
 ---
 
 ## Шаг 2 - Включение маршрутизации на MLS
@@ -391,6 +451,8 @@ hostname rus-msk-multisw1
 ```bash
 ip routing
 ```
+
+*Рис.34 Включение маршрутизации на MLS*
 
 ---
 
@@ -403,6 +465,8 @@ name Sales_dept
 vlan 200
 name IT_dept
 ```
+
+*Рис.35 Создание VLAN 100 и VLAN 200*
 
 ---
 
@@ -418,6 +482,8 @@ switchport mode access
 switchport access vlan 200
 ```
 
+*Рис.36 Назначение VLAN на интерфейсы*
+
 ---
 
 ## Шаг 5 - Включение маршрутизации между VLAN
@@ -431,6 +497,8 @@ interface vlan200
 ip address 200.0.0.50 255.255.255.0
 no shutdown
 ```
+
+*Рис.37 Включение маршрутизации между VLAN*
 
 ---
 
@@ -450,6 +518,8 @@ no switchport
 ip address 40.40.40.50 255.255.255.0
 ```
 
+*Рис.38 Изменение интерфейсов f0/1-3*
+
 ---
 
 ## Шаг 7 - Проверка
@@ -457,6 +527,8 @@ ip address 40.40.40.50 255.255.255.0
 ```bash
 ping 200.0.0.100
 ```
+
+*Рис.39 Проверка ping*
 
 # Часть 4
 
@@ -472,6 +544,8 @@ ip address 11.0.0.2 255.0.0.0
 no shutdown
 ```
 
+*Рис.40 Настройка интерфейсов R1*
+
 ---
 
 ## Шаг 2 - Настройка интерфейсов R2
@@ -485,6 +559,8 @@ interface f0/1
 ip address 12.0.0.3 255.0.0.0
 no shutdown
 ```
+
+*Рис.41 Настройка интерфейсов R2*
 
 ---
 
@@ -500,6 +576,8 @@ standby 1 preempt
 standby 1 track f0/1
 ```
 
+*Рис.42 Настройка HSRP на rus-msk-r1*
+
 ### rus-msk-r2
 
 ```bash
@@ -508,6 +586,8 @@ standby 1 ip 10.0.0.1
 standby 1 priority 100
 standby 1 preempt
 ```
+
+*Рис.43 Настройка HSRP на rus-msk-r2*
 
 # Часть 5
 
@@ -525,6 +605,8 @@ network 4.0.0.0
 network 40.40.40.0
 ```
 
+*Рис.44 Настройка EIGRP на rus-nsk-r1*
+
 ### rus-msk-r1
 
 ```bash
@@ -534,6 +616,8 @@ network 10.0.0.0
 network 11.0.0.0
 ```
 
+*Рис.45 Настройка EIGRP на rus-msk-r1*
+
 ### rus-msk-r2
 
 ```bash
@@ -542,6 +626,8 @@ no auto-summary
 network 10.0.0.0
 network 12.0.0.0
 ```
+
+*Рис.46 Настройка EIGRP на rus-msk-r2*
 
 ### rus-msk-multisw1
 
@@ -555,6 +641,8 @@ network 100.0.0.0
 network 200.0.0.0
 ```
 
+*Рис.47 Настройка EIGRP на rus-msk-multisw1*
+
 ---
 
 ## Шаг 2 - Проверка SSH
@@ -564,6 +652,8 @@ ssh -l nsk 1.0.0.50
 ssh -l nsk 2.0.0.50
 ```
 
+*Рис.48 Проверка SSH*
+
 ---
 
 ## Шаг 3 - Проверка Ping
@@ -571,6 +661,8 @@ ssh -l nsk 2.0.0.50
 ```bash
 ping 2.0.0.50
 ```
+
+*Рис.49 Проверка Ping*
 
 # Часть 6
 
@@ -586,6 +678,8 @@ line vty 0 15
 access-class 10 in
 ```
 
+*Рис.50 Ограничение SSH доступа на rus-nsk-sw1*
+
 ### rus-nsk-sw2
 
 ```bash
@@ -596,6 +690,8 @@ line vty 0 15
 access-class 10 in
 ```
 
+*Рис.51 Ограничение SSH доступа на rus-nsk-sw2*
+
 ---
 
 ## Шаг 2 - Ограничение доступа к Web Server
@@ -605,6 +701,8 @@ access-list 101 permit ip host 2.0.0.100 host 10.0.0.100
 access-list 101 deny ip any host 10.0.0.100
 access-list 101 permit ip any any
 ```
+
+*Рис.52 Ограничение доступа к Web Server*
 
 ---
 
@@ -620,6 +718,8 @@ interface f0/0
 ip access-group 110 in
 ```
 
+*Рис.53 Запрет ответа на ping на rus-msk-r1*
+
 ### rus-msk-r2
 
 ```bash
@@ -630,6 +730,8 @@ interface f0/0
 ip access-group 110 in
 ```
 
+*Рис.54 Запрет ответа на ping на rus-msk-r2*
+
 # Часть 7
 
 ## Шаг 1 - Loopback на R1
@@ -639,6 +741,8 @@ interface loopback1
 ip address 192.168.101.1 255.255.255.0
 ```
 
+*Рис.55 Создание Loopback на R1*
+
 ---
 
 ## Шаг 2 - Loopback на R2
@@ -647,6 +751,8 @@ ip address 192.168.101.1 255.255.255.0
 interface loopback3
 ip address 192.168.103.3 255.255.255.0
 ```
+
+*Рис.56 Создание Loopback на R2*
 
 ---
 
@@ -662,6 +768,8 @@ network 10.0.0.0
 network 192.168.101.0
 ```
 
+*Рис.57 Настройка RIPv2 на rus-nsk-r1*
+
 ### rus-msk-r2
 
 ```bash
@@ -671,6 +779,8 @@ no auto-summary
 network 10.0.0.0
 network 192.168.103.0
 ```
+
+*Рис.58 Настройка RIPv2 на rus-msk-r2*
 
 ---
 
@@ -691,6 +801,8 @@ tunnel source 10.0.0.2
 tunnel destination 10.0.0.3
 ```
 
+*Рис.59 Настройка Tunnel на rus-nsk-r1*
+
 ### rus-msk-r2
 
 ```bash
@@ -700,6 +812,8 @@ tunnel source 10.0.0.3
 tunnel destination 10.0.0.2
 ```
 
+*Рис.60 Настройка Tunnel на rus-msk-r2*
+
 ---
 
 ## Шаг 6 - Проверка
@@ -707,6 +821,8 @@ tunnel destination 10.0.0.2
 ```bash
 ping 192.168.103.3 source 192.168.101.1
 ```
+
+*Рис.61 Проверка Tunnel*
 
 # Часть 8
 
@@ -723,6 +839,8 @@ ntp server 10.0.0.100 key 1
 logging 10.0.0.100
 ```
 
+*Рис.62 Настройка NTP и Syslog на rus-nsk-r1*
+
 ### rus-msk-r1
 
 ```bash
@@ -734,6 +852,8 @@ ntp server 10.0.0.100 key 1
 logging 10.0.0.100
 ```
 
+*Рис.63 Настройка NTP и Syslog на rus-msk-r1*
+
 ### rus-msk-r2
 
 ```bash
@@ -744,6 +864,8 @@ ntp server 10.0.0.100 key 1
 
 logging 10.0.0.100
 ```
+
+*Рис.64 Настройка NTP и Syslog на rus-msk-r2*
 
 ---
 
@@ -756,12 +878,16 @@ snmp-server community cisco ro
 snmp-server community cisco rw
 ```
 
+*Рис.65 Настройка SNMP на rus-msk-r1*
+
 ### rus-msk-r2
 
 ```bash
 snmp-server community cisco ro
 snmp-server community cisco rw
 ```
+
+*Рис.66 Настройка SNMP на rus-msk-r2*
 
 ---
 
@@ -779,6 +905,8 @@ transport input telnet ssh
 login authentication default
 ```
 
+*Рис.67 Настройка AAA и Telnet на rus-msk-r2*
+
 ---
 
 ## Шаг 4 - Настройка FTP
@@ -788,6 +916,8 @@ ip ftp username cisco
 ip ftp password cisco
 ```
 
+*Рис.68 Настройка FTP*
+
 ---
 
 ## Шаг 5 - Отправка конфигурации FTP
@@ -795,6 +925,8 @@ ip ftp password cisco
 ```bash
 copy running-config ftp
 ```
+
+*Рис.69 Отправка конфигурации FTP*
 
 ---
 
@@ -804,6 +936,8 @@ copy running-config ftp
 copy running-config tftp
 ```
 
+*Рис.70 Отправка конфигурации TFTP*
+
 ---
 
 ## Шаг 7 - Проверка boot system
@@ -811,6 +945,8 @@ copy running-config tftp
 ```bash
 show run | include boot
 ```
+
+*Рис.71 Проверка boot system*
 
 ---
 
@@ -823,11 +959,15 @@ username standby secret cisco
 enable secret cisco
 ```
 
+*Рис.72 Создание пользователя*
+
 ### Подключение
 
 ```bash
 telnet 10.0.0.3
 ```
+
+*Рис.73 Подключение по Telnet*
 
 ---
 
@@ -837,6 +977,8 @@ telnet 10.0.0.3
 confreg 0x2142
 reload
 ```
+
+*Рис.74 Сброс конфигурации*
 
 После перезагрузки:
 
@@ -849,3 +991,5 @@ username newadmin secret cisco
 config-register 0x2102
 reload
 ```
+
+*Рис.75 Восстановление конфигурации и создание нового пользователя*
