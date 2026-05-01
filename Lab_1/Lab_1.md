@@ -95,17 +95,17 @@ rus-nsk-sw1:
 
 ## Шаг 5 - Создание VLAN 2, 3, 4 на коммутаторах в Нск
 
-rus-nsk-sw1:
+rus-nsk-sw0:
 
 <img width="152" height="84" alt="изображение" src="https://github.com/user-attachments/assets/e4aa15bf-0bf8-4893-9741-3153f485f2a5" />
 
-*Рис. 11 Создание VLAN на rus-nsk-sw1*
+*Рис. 11 Создание VLAN на rus-nsk-sw0*
 
-rus-nsk-sw2:
+rus-nsk-sw1:
 
 <img width="152" height="87" alt="изображение" src="https://github.com/user-attachments/assets/67cf9584-a719-4080-8bf7-adbef43941e9" />
 
-*Рис. 12 Создание VLAN на rus-nsk-sw2*
+*Рис. 12 Создание VLAN на rus-nsk-sw1*
 
 ## Шаг 6 - Назначение VLAN на интерфейсах
 
