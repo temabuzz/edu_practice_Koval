@@ -494,6 +494,7 @@ rus-msk-multisw1:
 
 ### rus-msk-r3
 
+<img width="386" height="58" alt="изображение" src="https://github.com/user-attachments/assets/24ca012c-72f1-4a83-8182-bc57f72313c2" />
 
 *Рис.60 Настройка Tunnel на rus-msk-r3*
 
