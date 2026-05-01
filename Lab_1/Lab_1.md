@@ -34,7 +34,7 @@ rus-nsk-r1
 | Первичная          | Измененная       |
 | ------------------ | ---------------- |
 | server0            | rus-msk-serv1    |
-| switch0            | rus-msk-sw1      |
+| switch0            | rus-msk-sw2      |
 | router0            | rus-msk-r2       |
 | router1            | rus-msk-r3       |
 | multilayer switch1 | rus-msk-multisw1 |
@@ -56,17 +56,41 @@ rus-nsk-r1
 | PC5       | rus-nsk-pc5 |
 
 ## Шаг 4 - Раздача доменных имён
+rus-msk-sw2:
 
-На всех устройствах:
+<img width="276" height="20" alt="изображение" src="https://github.com/user-attachments/assets/1883a9f7-418a-4822-a18d-84355fbf5cc6" />
 
-```bash
-conf t
-ip domain-name nsk.local
-```
+*Рис.5 Назначение доменного имени*
 
-*Рис.6 Настройка доменного имени*
+rus-msk-r2:
 
----
+<img width="259" height="20" alt="изображение" src="https://github.com/user-attachments/assets/f3d8f28d-8773-49bb-ab1f-89dd5bac7bb9" />
+
+*Рис.6 Назначение доменного имени*
+
+rus-msk-r3:
+
+<img width="254" height="16" alt="изображение" src="https://github.com/user-attachments/assets/89410d5e-cd8f-4cf3-adb5-633130b8627c" />
+
+*Рис.7 Назначение доменного имени*
+
+rus-nsk-r1:
+
+<img width="270" height="22" alt="изображение" src="https://github.com/user-attachments/assets/9d58f363-bd7c-4be2-9677-d834e0c3112d" />
+
+*Рис.8 Назначение доменного имени*
+
+rus-nsk-sw0:
+
+<img width="272" height="18" alt="изображение" src="https://github.com/user-attachments/assets/a86fe64a-b1ce-402b-affb-278c22d06b6b" />
+
+*Рис.9 Назначеие доменного имени*
+
+rus-nsk-sw1:
+
+<img width="276" height="16" alt="изображение" src="https://github.com/user-attachments/assets/a93333b3-9c1b-4a13-a002-c633a0122386" />
+
+*Рис10 Назначение доменного имени*
 
 ## Шаг 5 - Создание VLAN на коммутаторах в Нск
 
